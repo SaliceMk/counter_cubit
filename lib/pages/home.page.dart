@@ -1,5 +1,6 @@
 
 import 'package:counter_cubit/logic/cubit/counter_cubit.dart';
+import 'package:counter_cubit/pages/second_screen.page.dart';
 import 'package:counter_cubit/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -39,6 +40,16 @@ class HomePage extends StatelessWidget {
                   child: const Icon(Icons.add),),
                 ],
               ),
+            ),
+            MaterialButton(onPressed: (){
+              //builder context should be the context of the new screen
+              Navigator.of(context).push(MaterialPageRoute(builder: (newContext)=>BlocProvider.value(
+                value: BlocProvider.of<CounterCubit>(context),//from existing context
+                child: const SecondScreenPage(title: 'Next Screen',),
+              )));
+            },
+            child: const Text('Go to Next Screen',style: TextStyle(color: Colors.white),),
+            color: Colors.indigo,
             )
           ],
         ),

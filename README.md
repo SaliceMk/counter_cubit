@@ -22,3 +22,5 @@ samples, guidance on mobile development, and a full API reference.
 #4 For those widgets which need to be re-rendered when a state changes, wrap them with BlocBuilder or simply BlocConsumer:builder 
 *** For an action to be performed when a state changes, wrap them with BlocListener or simply BlocConsumer: listener
 *** If there are multiple floatinf action button in a screen , use the heroTag, otherwise it gives an error
+#5 install equattable . extend equatable in cubit state. 
+*** BlocProvider.value is also used . the name of the new context n the existing context must be different .
